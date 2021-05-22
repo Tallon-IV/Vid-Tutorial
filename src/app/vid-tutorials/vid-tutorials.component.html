@@ -1,0 +1,16 @@
+<p>vid-tutorials works!</p>
+Search: <input id="searchInput" [(ngModel)]="searchTerm"><br>
+<div *ngFor="let tag of tagChoices">
+  {{tag.label}}:<input type="checkbox" name="{{tag.label}}" [value]="tag.checked" (change)="onTagToggled($event)">
+</div>
+<br><br>
+<input type="submit" value="Refresh Videos" (click)="refreshVideos()">
+<ul>
+  <li *ngFor="let vidTut of (((vidTutorials|async)|vidTutFilter: searchTerm)|tagFilter: getSelectedTags())">
+    Title: {{vidTut.videoTitle}}<br>
+    By: {{vidTut.teacherName}}<br>
+    {{vidTut.tags}}<br>
+    Rating: {{vidTut.averageUserRating}}<br>
+    <br>
+  </li>
+</ul>
