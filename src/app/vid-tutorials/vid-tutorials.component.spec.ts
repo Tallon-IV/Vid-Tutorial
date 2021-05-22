@@ -1,4 +1,4 @@
-import {ComponentFixture, TestBed, waitForAsync} from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
 import { VidTutorialsComponent } from './vid-tutorials.component';
 import {HttpClientModule} from '@angular/common/http';

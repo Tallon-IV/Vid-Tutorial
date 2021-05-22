@@ -15,11 +15,17 @@ export class VidTutorialService {
     this.refreshVideoTutorials();
   }
 
+  /**
+   * @returns An observable of the video tutorials.
+   */
   getVideoTutorials(): Observable<VideoTutorial[]>
   {
     return this.videoTutorials.asObservable();
   }
 
+  /**
+   * Calls the api to retrieve video tutorial data. Updates all subscribers to the videoTutorials observable.
+   */
   refreshVideoTutorials(): void
   {
     this.api.fetchVidTutorials().subscribe
